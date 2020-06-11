@@ -115,6 +115,7 @@ Library
   Exposed-Modules:
     Hakyll
     Hakyll.Commands
+    Hakyll.Core
     Hakyll.Core.Compiler
     Hakyll.Core.Compiler.Internal
     Hakyll.Core.Configuration
@@ -137,6 +138,7 @@ Library
     Hakyll.Core.Util.String
     Hakyll.Core.Writable
     Hakyll.Main
+    Hakyll.Web
     Hakyll.Web.CompressCss
     Hakyll.Web.Feed
     Hakyll.Web.Html
