@@ -19,7 +19,7 @@ import           Control.Monad.Trans          (liftIO)
 import           Control.Monad.Trans.Resource (runResourceT)
 import           Data.List                    (isPrefixOf)
 import qualified Data.Map.Lazy                as Map
-#if MIN_VERSION_base(4,9,0)
+#if !MIN_VERSION_base(4,9,0)
 import           Data.Semigroup               (Semigroup (..))
 #endif
 import           Network.URI                  (unEscapeString)

@@ -43,7 +43,7 @@ module Hakyll.Core.Routes
 
 
 --------------------------------------------------------------------------------
-#if MIN_VERSION_base(4,9,0)
+#if !MIN_VERSION_base(4,9,0)
 import           Data.Semigroup                 (Semigroup (..))
 #endif
 import           System.FilePath                (replaceExtension, normalise)

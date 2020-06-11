@@ -18,7 +18,7 @@ import           Control.Monad.Reader           (ask)
 import           Control.Monad.RWS              (RWST, runRWST)
 import           Control.Monad.Trans            (liftIO)
 import qualified Data.Map                       as M
-#if MIN_VERSION_base(4,9,0)
+#if !MIN_VERSION_base(4,9,0)
 import           Data.Semigroup                 (Semigroup (..))
 #endif
 import           Data.Set                       (Set)

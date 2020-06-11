@@ -44,7 +44,7 @@ import qualified Control.Monad.Fail             as Fail
 import           Control.Monad.Except           (MonadError (..))
 import           Data.List.NonEmpty             (NonEmpty (..))
 import qualified Data.List.NonEmpty             as NonEmpty
-#if MIN_VERSION_base(4,9,0)
+#if !MIN_VERSION_base(4,9,0)
 import           Data.Semigroup                 (Semigroup (..))
 #endif
 import           Data.Set                       (Set)

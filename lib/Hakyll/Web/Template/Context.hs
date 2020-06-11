@@ -56,7 +56,7 @@ import           Control.Applicative           (Alternative (..))
 import           Control.Monad                 (msum)
 import           Control.Monad.Fail            (MonadFail)
 import           Data.List                     (intercalate, tails)
-#if MIN_VERSION_base(4,9,0)
+#if !MIN_VERSION_base(4,9,0)
 import           Data.Semigroup                (Semigroup (..))
 #endif
 import           Data.Time.Clock               (UTCTime (..))
