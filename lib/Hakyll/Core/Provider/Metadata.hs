@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 -- | Internal module to parse metadata
+{-# LANGUAGE CPP             #-}
 {-# LANGUAGE BangPatterns    #-}
 {-# LANGUAGE RecordWildCards #-}
 module Hakyll.Core.Provider.Metadata
@@ -19,7 +20,9 @@ import qualified Data.ByteString.Char8         as BC
 import           Data.List.Extended            (breakWhen)
 import qualified Data.Map                      as M
 import           Data.Maybe                    (fromMaybe)
+#if !MIN_VERSION_base(4,11,0)
 import           Data.Monoid                   ((<>))
+#endif
 import qualified Data.Text                     as T
 import qualified Data.Text.Encoding            as T
 import qualified Data.Yaml                     as Yaml

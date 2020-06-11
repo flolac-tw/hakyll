@@ -29,7 +29,9 @@ import           System.IO.Unsafe          (unsafePerformIO)
 
 
 --------------------------------------------------------------------------------
-import           Data.Monoid               ((<>))
+#if !MIN_VERSION_base(4,11,0)
+import           Data.Monoid                   ((<>))
+#endif
 import qualified Options.Applicative       as OA
 
 
