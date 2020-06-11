@@ -13,7 +13,9 @@ module Hakyll.Core.Rules.Internal
 
 
 --------------------------------------------------------------------------------
+#if !MIN_VERSION_base(4,9,0)
 import           Control.Monad.Fail             (MonadFail)
+#endif
 import           Control.Monad.Reader           (ask)
 import           Control.Monad.RWS              (RWST, runRWST)
 import           Control.Monad.Trans            (liftIO)

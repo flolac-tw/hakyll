@@ -1,4 +1,5 @@
 --------------------------------------------------------------------------------
+{-# LANGUAGE CPP #-}
 module Hakyll.Core.Metadata
     ( Metadata
     , lookupString
@@ -16,7 +17,9 @@ module Hakyll.Core.Metadata
 --------------------------------------------------------------------------------
 import           Control.Arrow                  (second)
 import           Control.Monad                  (forM)
+#if !MIN_VERSION_base(4,9,0)
 import           Control.Monad.Fail             (MonadFail)
+#endif
 import           Data.Binary                    (Binary (..), getWord8,
                                                  putWord8, Get)
 import qualified Data.HashMap.Strict            as HMS
