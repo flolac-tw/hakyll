@@ -1,5 +1,5 @@
 Name:    hakyll
-Version: 4.13.3.0
+Version: 4.13.4.1
 
 Synopsis: A static website compiler library
 Description:
@@ -59,6 +59,11 @@ Data-files:
 
 Extra-source-files:
   CHANGELOG.md
+  tests/data/biblio/biblio01.golden
+  tests/data/biblio/chicago.csl
+  tests/data/biblio/default.html
+  tests/data/biblio/page.markdown
+  tests/data/biblio/refs.bib
   tests/data/embed.html
   tests/data/example.md
   tests/data/example.md.metadata
@@ -172,11 +177,11 @@ Library
     blaze-markup         >= 0.5.1    && < 0.9,
     bytestring           >= 0.9      && < 0.11,
     containers           >= 0.3      && < 0.7,
-    cryptonite           >= 0.25     && < 0.27,
+    cryptonite           >= 0.25     && < 0.28,
     data-default         >= 0.4      && < 0.8,
     deepseq              >= 1.3      && < 1.5,
-    directory            >= 1.0      && < 1.4,
-    file-embed           >= 0.0.10.1 && < 0.0.12,
+    directory            >= 1.2.7.0  && < 1.4,
+    file-embed           >= 0.0.10.1 && < 0.0.14,
     filepath             >= 1.0      && < 1.5,
     lrucache             >= 1.1.1    && < 1.3,
     memory               >= 0.14.18  && < 0.16,
@@ -185,12 +190,12 @@ Library
     optparse-applicative >= 0.12     && < 0.16,
     parsec               >= 3.0      && < 3.2,
     process              >= 1.6      && < 1.7,
-    random               >= 1.0      && < 1.2,
+    random               >= 1.0      && < 1.3,
     regex-tdfa           >= 1.1      && < 1.4,
     resourcet            >= 1.1      && < 1.3,
     scientific           >= 0.3.4    && < 0.4,
     tagsoup              >= 0.13.1   && < 0.15,
-    template-haskell     >= 2.14     && < 2.16,
+    template-haskell     >= 2.14     && < 2.17,
     text                 >= 0.11     && < 1.3,
     time                 >= 1.8      && < 1.10,
     time-locale-compat   >= 0.1      && < 0.2,
@@ -234,8 +239,7 @@ Library
     Other-Modules:
       Hakyll.Web.Pandoc.Binary
     Build-Depends:
-      pandoc          >= 2.0.5    && < 2.10,
-      pandoc-citeproc >= 0.14     && < 0.18
+      pandoc >= 2.11 && < 2.12
     Cpp-options:
       -DUSE_PANDOC
 
@@ -267,8 +271,9 @@ Test-suite hakyll-tests
 
   Build-Depends:
     hakyll,
-    QuickCheck                 >= 2.8  && < 2.14,
-    tasty                      >= 0.11 && < 1.3,
+    QuickCheck                 >= 2.8  && < 2.15,
+    tasty                      >= 0.11 && < 1.4,
+    tasty-golden               >= 2.3  && < 2.4,
     tasty-hunit                >= 0.9  && < 0.11,
     tasty-quickcheck           >= 0.8  && < 0.11,
     -- Copy pasted from hakyll dependencies:
@@ -294,6 +299,7 @@ Test-suite hakyll-tests
 
   If flag(usePandoc)
     Other-modules:
+      Hakyll.Web.Pandoc.Biblio.Tests
       Hakyll.Web.Pandoc.FileType.Tests
     Cpp-options:
       -DUSE_PANDOC
@@ -329,4 +335,4 @@ Executable hakyll-website
     base      >= 4     && < 5,
     directory >= 1.0   && < 1.4,
     filepath  >= 1.0   && < 1.5,
-    pandoc    >= 2.0.5 && < 2.10
+    pandoc    >= 2.11  && < 2.12
